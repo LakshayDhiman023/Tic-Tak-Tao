@@ -1,0 +1,38 @@
+/* Default styling for the board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+  /* Gap between squares */
+  max-width: 400px; /* Maximum width for the board */
+  margin: 0 auto; /* Center the board horizontally */
+}
+
+.status {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.symbol {
+  color: white;
+  font-size: 60px;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .board {
+    grid-template-columns: repeat(3, 1fr); /* Two equal-width columns for smaller screens */
+    max-width: 300px; /* Adjust maximum width for smaller screens */
+  }
+
+  .status {
+    font-size: 1.5rem; /* Reduce font size for smaller screens */
+  }
+
+  .symbol {
+    font-size: 40px; /* Reduce font size for smaller screens */
+  }
+}
+
+/* Media query for even smaller screens (e.g., very small mobile devices) */
+

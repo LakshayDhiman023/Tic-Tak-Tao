@@ -1,0 +1,26 @@
+.square {
+  height: 12vh; 
+  width: 10vw;
+  max-width: 100px; /* Maximum width for large screens */
+  background-color: inherit;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+  .square {
+    height: 8vw; 
+    width: 8vw;
+  }
+}
+
+ @media (max-width: 480px) {
+  .square {
+    height: 6vw; 
+    width: 6vw;
+    max-width: 80px; 
+  }
+}

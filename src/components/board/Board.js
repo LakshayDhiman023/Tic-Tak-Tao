@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import Square from "./Square";
-
+import Square from "../square/Square";
+import './board.css'
 function Board({ xIsNext, squares, onPlay }) {
   // const [squares, setSquares] = useState(Array(9).fill(null));
+  const [count, setCount ] = useState(0);
 
   const [squareColor, setSquareColor] = useState(Array(9).fill("black"));
   const handleClick = (i) => {
+    setCount(count+1);
     if (squares[i] || calculateWinner(squares)) {
       return;
     }
@@ -51,15 +53,19 @@ function Board({ xIsNext, squares, onPlay }) {
   let status;
   if (winner) {
     status = "Winner: " + winner;
-  } else {
+  }
+  else if(count>=9){
+    status = "Draw";
+  } 
+  else {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
   return (
     <>
-      <div className="board">
+      <div className="">
         <div className="status">{status}</div>
-        <div className="board-row">
+        <div className="board">
           <Square
             value={squares[0]}
             onSquareClick={() => {
@@ -82,7 +88,7 @@ function Board({ xIsNext, squares, onPlay }) {
             squareColor={squareColor}
           />
         </div>
-        <div className="board-row">
+        <div className="board">
           <Square
             value={squares[3]}
             onSquareClick={() => {
@@ -105,7 +111,7 @@ function Board({ xIsNext, squares, onPlay }) {
             squareColor={squareColor}
           />
         </div>
-        <div className="board-row">
+        <div className="board">
           <Square
             value={squares[6]}
             onSquareClick={() => {

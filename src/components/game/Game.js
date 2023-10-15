@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Board from "./Board";
-import Heading from "./Heading";
+import Board from "../board/Board";
+import Heading from "../heading/Heading";
+import "./game.css";
 
 function Game() {
   const [xIsNext, setXIsNext] = useState(true);
@@ -30,7 +31,9 @@ function Game() {
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+        <button className="moves btn btn-primary" onClick={() => jumpTo(move)}>
+          {description}
+        </button>
       </li>
     );
   });
@@ -38,7 +41,7 @@ function Game() {
     <>
       <Heading />
 
-      <div className="game">
+      <div className="game-container">
         <div className="game-board">
           <Board
             xIsNext={xIsNext}
@@ -47,7 +50,7 @@ function Game() {
           />
         </div>
         <div className="game-info">
-          <ol>{moves}</ol>
+          <ol style={{color:'white'}}>{moves}</ol>
         </div>
       </div>
     </>

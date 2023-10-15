@@ -1,0 +1,21 @@
+.heading {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 5% 0;
+    font-size: 2.5rem; /* Increase the font size */
+}
+
+/* Media query for smaller screens (e.g., tablets) */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Media query for very small screens (e.g., mobile devices) */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 1.5rem; /* Further adjust font size for very small screens */
+    }
+}

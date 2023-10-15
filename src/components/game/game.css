@@ -1,0 +1,16 @@
+.game-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-board {
+ margin-left: 30%;
+}
+
+.game-info {
+  position: absolute;
+  right: 3rem;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: inherit; /* Background color for the moves list */
+}
